@@ -1,5 +1,6 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-/Week3/Week3CodeAlong/Properties
+/Week3/Week3CodeAlong/obj/Debug
+/Week3/Week3CodeAlong/bin/Debug
+/Week3/Week3CodeAlong/.vs/Week3CodeAlong/v16/Server/sqlite3
