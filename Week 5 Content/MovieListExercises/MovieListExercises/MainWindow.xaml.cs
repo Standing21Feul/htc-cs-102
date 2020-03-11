@@ -33,12 +33,30 @@ namespace MovieList
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Movie movieToAdd = new Movie(titleInput.Text, int.Parse(releaseYearInput.Text));
+            Movie movieToAdd = new Movie(titleInput.Text, int.Parse(releaseYearInput.Text), double.Parse(rottenTomatoesScoreInput.Text));
 
-            MovieList.Add(movieToAdd);
+            if (!MovieInList(movieToAdd))
+            {
+                MovieList.Add(movieToAdd);
 
-            titleInput.Clear();
-            releaseYearInput.Clear();
+                titleInput.Clear();
+                releaseYearInput.Clear();
+                rottenTomatoesScoreInput.Clear();
+            }
+        }
+
+        private bool MovieInList(Movie movieToAdd)
+        {
+            foreach (Movie m in MovieList)
+            {
+                if (movieToAdd.Title == m.Title)
+                {
+                    MessageBox.Show("This movie is already in the list, add a different movie.");
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)

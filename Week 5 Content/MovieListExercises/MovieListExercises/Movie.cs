@@ -17,6 +17,12 @@ namespace MovieList
             set;
         }
 
+        public double RottenTomatoesScore
+        {
+            get;
+            set;
+        }
+
         public void ShowDetails()
         {
             string infoString = "Title: " + this.Title;
@@ -24,10 +30,11 @@ namespace MovieList
             MessageBox.Show(infoString);
         }
 
-        public Movie(string myTitle, int myReleaseYear)
+        public Movie(string myTitle, int myReleaseYear, double myRottenTomatoesScore)
         {
             this.Title = myTitle;
             this.ReleaseYear = myReleaseYear;
+            this.RottenTomatoesScore = myRottenTomatoesScore;
         }
     }
 }
